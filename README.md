@@ -52,3 +52,55 @@ pn up --latest
 - **Безпека** — перевірка наявності обов'язкових змінних під час збірки
 
 ---
+
+## `🎨 02 - Налаштування компонентів shadcn/ui`
+
+### 1. Встановлення пакету
+
+```bash
+pn dlx shadcn@latest init
+```
+
+### 2. Конфігурація `components.json` з правильними аліасами
+
+```jsonc
+{
+  "tailwind": {
+    "css": "styles/globals.css"
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/core/utils/css",
+    "ui": "@/components/ui",
+    "lib": "@/core/libs",
+    "hooks": "@/core/hooks"
+  }
+}
+```
+
+### 3. Встановлення основних UI-компонентів
+
+```bash
+pn dlx shadcn@latest add button card form input label sonner avatar badge breadcrumb
+pn dlx shadcn@latest add dropdown-menu alert-dialog table dialog textarea tabs select
+pn dlx shadcn@latest add scroll-area pagination tooltip sheet
+```
+
+### 4. Перенесення глобального CSS
+
+```diff
+- app/globals.css
++ styles/globals.css
+```
+
+### 5. Структура глобального CSS
+
+Глобальний CSS тепер знаходиться у `styles/globals.css` для кращої структурованості
+
+Файл `styles/globals.css` розділений на логічні блоки:
+
+- **Tailwind CSS** — основні стилі та анімації
+- **Теми** — `inline.css`, `light.css`, `dark.css` для підтримки темної/світлої теми
+- **Базові стилі** — `base.scss` для загальних стилів
+
+---

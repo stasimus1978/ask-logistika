@@ -1,0 +1,38 @@
+.dark {
+  /* 🎨 Базові кольори інтерфейсу */
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+
+  /* 🌟 Основна (primary) кольорова схема */
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+
+  /* 🎯 Вторична (secondary) кольорова схема */
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+
+  /* ✨ Акцент (accent) */
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+
+  /* 🖤 Мутні елементи (muted) */
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+
+  /* 🃏 Картки (card) */
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+
+  /* 📌 Popover / Tooltip */
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+
+  /* 🔵 Кольцо фокуса */
+  --ring: oklch(0.556 0 0);
+  /* 🔵 Поля вводу */
+  --input: oklch(1 0 0 / 15%);
+  /* 🔵 Обводки і стані */
+  --border: oklch(1 0 0 / 10%);
+  /* 🔴 Деструктивні елементи (destructive) */
+  --destructive: oklch(0.704 0.191 22.216);
+}

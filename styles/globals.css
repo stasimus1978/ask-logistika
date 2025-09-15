@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@plugin "@tailwindcss/forms";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Базові стилі */
+@import "./layers/base.scss" layer(base);
+
+/* Компоненти */
+@import "./layers/components.scss" layer(components);
+
+/* Теми */
+@import "./themes/base.scss" layer(theme);
+@import "./themes/light.scss" layer(theme);
+@import "./themes/dark.scss" layer(theme);
