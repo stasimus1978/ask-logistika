@@ -6,11 +6,13 @@ export const env = createEnv({
 
   server: {
     APP_NAME: z.string(),
-    NODE_ENV: z.enum(["development", "production"])
+    NODE_ENV: z.enum(["development", "production"]),
+    DATABASE_URL: z.string()
   },
 
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
-    APP_NAME: process.env.APP_NAME
+    APP_NAME: process.env.APP_NAME,
+    DATABASE_URL: process.env.DATABASE_URL
   }
 });

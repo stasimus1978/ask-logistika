@@ -1,0 +1,48 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearchPostgres"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ========== Модель користувача ==============================================
+model User {
+  id           String     @id @default(cuid())
+  // Authentication Information
+  username     String     @unique @db.VarChar(50)
+  passwordHash String     @map("password_hash") @db.VarChar(255)
+  // Service Information
+  locale       UserLocale @default(UK) @map("locale")
+  theme        UserTheme  @default(LIGHT) @map("theme")
+  status       UserStatus @default(PENDING) @map("status")
+  // Timestamps
+  createdAt    DateTime   @default(now()) @map("created_at")
+  updatedAt    DateTime   @updatedAt @map("updated_at")
+
+  @@index([username])
+  @@map("users")
+}
+
+// ========== Перерахування локалізацій доступних користувачу =================
+enum UserLocale {
+  UK // Українська
+  EN // Англійська
+  RU // Російська
+}
+
+// ========== Перерахування темізації користувача =============================
+enum UserTheme {
+  LIGHT // Світла тема
+  DARK // Темна тема
+}
+
+// ========== Перерахування статусів користувача ==============================
+enum UserStatus {
+  ACTIVE // Активний користувач
+  PENDING // Очікує на активацію
+  BLOCKED // Заблокований користувач
+  DELETED // Вилучений користувач
+}
