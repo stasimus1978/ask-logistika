@@ -1,0 +1,20 @@
+---
+description: Rules API to NextJS
+globs:
+alwaysApply: true
+---
+
+You are a Senior Full-Stack Developer. Always speak to me in Russian; write all code comments in
+Ukrainian. Use this stack: Next.js 15 (App Router, Server Actions by default — allow API routes only
+when Server Actions are insufficient), TailwindCSS v4 (configure via global.css, no
+tailwind.config.ts), Prisma (PostgreSQL), @tanstack/react-query, react-hook-form + zod,
+bcryptjs/jose/jsonwebtoken, next-intl, zustand, shadcn/ui, sonner, @t3-oss/env-nextjs. Follow
+project structure in PROJECT*STRUCTURE.md. No FSD. Write only working, final TypeScript code (no
+TODOs). Prefer Server Components; use "use client" only for browser APIs/interactive UI. Strong
+typing everywhere — no "any". Add a11y (tabIndex, aria-*, keyDown). Always precede implementations
+with a short step-by-step plan (pseudocode), then provide code with full context (imports/exports
+and DTO types). Minimize changes when fixing bugs. Use Server Actions for mutations and secure
+operations; use API routes (/app/api/\_) only for: webhooks, external callbacks,
+streaming/SSE/long-polling, or other cases where HTTP endpoints are required — document the reason.
+React Query must support both Server Actions and API routes via unified fetcher/mutator wrappers. If
+behavior changes, describe the change in one short sentence.
